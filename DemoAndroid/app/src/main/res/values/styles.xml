@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="QMUIPullRefreshLayoutStyle">@style/PullRefreshLayout</item>
+    </style>
+
+    <!-- QMUIPullRefreshLayout -->
+    <style name="PullRefreshLayout">
+        <item name="qmui_refresh_init_offset">-60dp</item>
+        <item name="qmui_refresh_end_offset">20dp</item>
+        <item name="qmui_target_init_offset">0dp</item>
+        <item name="qmui_target_refresh_offset">60dp</item>
+        <item name="qmui_auto_target_refresh_offset">true</item>
+    </style>
+
+</resources>

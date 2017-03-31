@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="QMUIPullRefreshLayout">
+        <attr name="qmui_refresh_init_offset" format="dimension"/>
+        <attr name="qmui_refresh_end_offset" format="dimension"/>
+        <attr name="qmui_target_init_offset" format="dimension"/>
+        <attr name="qmui_target_refresh_offset" format="dimension"/>
+        <attr name="qmui_auto_target_refresh_offset" format="boolean"/>
+    </declare-styleable>
+    <attr name="QMUIPullRefreshLayoutStyle" format="reference"/>
+
+    <declare-styleable name="WWLoadingView">
+        <attr name="loading_size" format="dimension"/>
+    </declare-styleable>
+</resources>

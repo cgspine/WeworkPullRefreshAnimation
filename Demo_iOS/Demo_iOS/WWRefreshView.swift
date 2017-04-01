@@ -10,7 +10,7 @@ import UIKit
 
 
 let ORIGIN_INSET: CGFloat = 12
-let ANIMATION_DURATION: CFTimeInterval = 0.6
+let ANIMATION_DURATION: CFTimeInterval = 0.8
 class WWRefreshView: SMRefreshHeader {
     var balls = [Ball]()
     var displayLink: CADisplayLink?
@@ -113,7 +113,7 @@ class Ball{
     var smallRadius: CGFloat
     var op: OriginPoint
     var color: UIColor
-    var layer: BalLayer
+    var layer: CAShapeLayer
     
     var smallX: CGFloat = 0
     var smallY: CGFloat = 0
@@ -125,20 +125,11 @@ class Ball{
         self.smallRadius = smallRadius
         self.color = color
         self.op = op
-        self.layer = BalLayer()
+        self.layer = CAShapeLayer()
         self.smallX = op.x
         self.x = op.x
         self.smallY = op.y
         self.y = op.y
-        
-        self.layer.percentSetNotificer = {[weak self] in
-            if let strongSelf = self {
-                strongSelf.calculate(percent: strongSelf.layer.percent)
-                strongSelf.draw()
-                strongSelf.layer.setNeedsDisplay()
-            }
-            
-        }
     }
     
     func next() {
@@ -297,14 +288,5 @@ extension WWRefreshView: CAAnimationDelegate {
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool){
         
-    }
-}
-
-class BalLayer: CAShapeLayer {
-    var percentSetNotificer:(() -> Void)?
-    var percent: CGFloat = 0 {
-        didSet{
-            percentSetNotificer?()
-        }
     }
 }
